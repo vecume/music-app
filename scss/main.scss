@@ -1,0 +1,316 @@
+$mc: #ff564c;
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-family: 'Open Sans';
+}
+
+.search-btn {
+  display: none;
+}
+
+.right {
+  width: calc(100% - 370px);
+  margin-left: auto;
+  height: 100vh;
+  background: #000;
+  overflow-y: scroll;
+}
+
+.btn--disabled {
+  cursor: not-allowed;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+}
+
+main {
+  position: relative;
+  display: flex;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.blur-img{
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  filter: blur(0.8rem);
+}
+
+.results-list {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  li {
+    width: 30%;
+
+    .music-wrapper {
+      text-align: center;
+      width: 100%;
+      position: relative;
+      transition: 0.3s;
+      
+      .layer {
+        position: absolute;
+        top: 100%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        border-radius: 10px;
+        transition: 0.5s;
+      }
+      &:hover button, &:active button {
+        opacity: 1;
+      }
+      &:hover .layer, &:active .layer {
+        top: 0;
+        background: linear-gradient(to top, #ff554cc2,#ff554c73, #ff554c00);
+      }
+      button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50px;
+        height: 50px;
+        border:none;
+        background: $mc;
+        transition: 0.3s;
+        border-radius: 50%;
+        opacity: 0;
+
+        &::before {
+          position: absolute;
+          font-family: 'FontAwesome';
+          color: white;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          content: '\f04b';
+        }
+
+        &:hover, &:active {
+          transform: translate(-50%, -50%) scale(1.2);
+        }
+
+        i {
+          color: white;
+        }
+      }
+      .is-paused {
+        &::before {
+          content: '\f04c';
+        }
+      }
+    }
+
+    .music-image {
+      display: block;
+      width: 100%;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+    .img--active {
+      filter: blur(0.1rem);
+    }
+  }
+}
+
+.song {
+  
+  button {
+    position: relative;
+    border:none;
+    width: 30px;
+    height: 30px;
+    background: $mc;
+    transition: 0.3s;
+    border-radius: 50%;
+
+    
+
+    &::before {
+      position: absolute;
+      font-family: 'FontAwesome';
+      color: black;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      content: '\f04b';
+    }
+  }
+  .is-paused {
+    &::before {
+      content: '\f04c';
+    }
+  }
+}
+
+.music-title {
+  text-align: center;
+}
+
+.form-wrapper {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #555;
+  transition: 0.3s;
+
+  i {
+    padding: 10px;
+  }
+}
+
+#form {
+  width: 100%;
+
+  input {
+    display: block;
+    width: 100%;
+    height: 40px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    transition: 0.3s;
+
+    &:focus, &:active {
+      border-bottom: 2px solid #666;
+    }
+  }
+}
+
+
+.bars {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+  
+  height: 0;
+  position: absolute;
+  top: 0;
+  bottom: 2.5px;
+  transition: 0.3s;
+}
+
+
+
+.bars--active {
+  height: auto;
+}
+
+@media only screen and (max-width: 1000px) {
+  .music-title {
+    font-size: 1em;
+    margin: 8px 0;
+  }
+  .results-list {
+    li {
+      width: 49%;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 800px) {
+  .bar {
+    top: 65%;
+    box-shadow: 0 0 15px white;
+  }
+  .info {
+    left: 5%;
+    top: 70%;
+  }
+  .results-list {
+    padding: 0 5px;
+    li {
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .music-title {
+    font-size: 0.7em;
+    margin: 5px 0;
+  }
+  .search-btn {
+    display: block;
+    position: absolute;
+    right: 5px;
+    background: transparent;
+    color: white;
+    border: none;
+  }
+  .form-wrapper {
+    width: 0;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    transition: 0.3s;
+
+    i {
+      display: none;
+    }
+  }
+  .form--active {
+    
+    width: calc(370px * 0.75);
+    left: calc(370px * 0.25 / 2);
+    #form input {
+      height: 30px;
+      color: black;
+    }
+  }
+}
+
+@media only screen and (max-width: 470px) {
+  .screen {
+    width: 350px;
+  }
+  .form--active {
+    width: calc(350px * 0.75);
+    left: calc(350px * 0.25 / 2);
+  }
+  .results-list li .music-wrapper button {
+    width: 25px;
+    height: 25px;
+  }
+  .right {
+    width: calc(100% - 350px);
+    margin-left: 350px;
+  }
+  .music-title {
+    font-size: 0.5em;
+    margin: 5px 0;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .screen {
+    width: 100%;
+  }
+  .form--active {
+    width: 75%;
+    left: 12.5%;
+  }
+  .right {
+    width: 0;
+    height: 0;
+  }
+}

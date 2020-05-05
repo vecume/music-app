@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>kidDeezer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/player.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+
+
+  <main class="main">
+    
+      <section class="screen">
+        <input type="checkbox" value="None" id="magicButton" name="check" />
+        <label class="main" for="magicButton"></label>
+
+        <div class="coverImage"></div>
+        <div class="search">
+          <button class="search-btn"><i class="fa fa-search"></i></button>
+        </div>
+        <div class="bodyPlayer"></div>
+
+        <div class="table-wrapper">
+        	<table class="list">
+        	  
+        	  
+        	</table>
+        </div>
+
+
+        <div class="bar">
+          <span class="line" id="progress"></span>
+        </div>
+        <div class="info">
+          <h4>Without Me</h4>
+          <h3>Eminem</h3>
+        </div>
+        <audio preload="auto" id="audio" controls>
+          <source id="audio-src" src="https://cdns-preview-c.dzcdn.net/stream/c-cca63b2c92773d54e61c5b4d17695bd2-6.mp3">
+        </audio>
+        <div class="controller">
+          <button type="button"><i class="fas fa-backward"></i></button>
+          <button type="button" class="toggle-music"><i class="fas fa-play"></i></button>
+          <button type="button"><i class="fas fa-forward"></i></button>
+        </div>
+
+
+        <div class="current">
+          <h2>STRESSED OUT</h2>
+        </div>
+      </section>
+      <section class="right">
+        <div class="wrapper">
+          <div class="form-wrapper">
+            <i class="fas fa-search"></i>  
+            <form id="form" class="form" method="GET">
+              <input type="text" class="search-text">
+            </form id="form">
+          </div>
+          <ul class="results-list">
+
+          </ul>
+        </div>
+      </section>
+  </main>
+
+
+  
+
+  <template id="table-member">
+    <tr class="song">
+      <td class="nr">
+        <h5>1<h5>
+      </td>
+      <td class="title">
+        <h6>Heavydirtysoul<h6>
+      </td>
+      <td><button type="button"></button></td>
+    </tr>
+  </template>
+
+  <template id="results">
+    <li>
+      <div class="music-wrapper">
+        <div class="layer"></div>
+        <img src="img/placeholder.png" alt="" class="music-image">
+        <img src="img/bars.gif" alt="" class="bars">
+        <button type="button" class="play-button"></button>
+      </div>
+      <h3 class="music-title"></h3>
+    </li>
+  </template>
+
+
+  <script src="js/initial.js"></script>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
