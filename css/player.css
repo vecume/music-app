@@ -135,7 +135,7 @@ label.main:hover:before {
 }
 
 .coverImage {
-  background: url('https://angstyteenwatchingtoomuchtv.files.wordpress.com/2015/07/tumblr_nlhsir3adc1sk2qobo1_12801.gif') no-repeat;
+  background: url('./../img/default-bg.png') no-repeat;
   background-size: cover;
   background-position: center center;
   width: 100%;
