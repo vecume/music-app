@@ -135,7 +135,7 @@ label.main:hover:before {
 }
 
 .coverImage {
-  background: url('./../img/default-bg.png') no-repeat;
+  background: url('./../img/default-bg.jpg') no-repeat;
   background-size: cover;
   background-position: center center;
   width: 100%;
